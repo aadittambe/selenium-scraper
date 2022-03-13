@@ -21,6 +21,7 @@ driver.get("https://cpj.org/data/killed")
 list_of_rows = []
 counter = 0
 while counter < 100:
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     table = soup.find("table", {"table js-report-builder-table"})
