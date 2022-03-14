@@ -38,6 +38,6 @@ while counter < 100:
     next_button.click()
     time.sleep(1)
     
-data = pd.DataFrame(list_of_rows, columns=["link","name", "organization", "date", "location","killed","type_of_death", ""]).dropna()
+data = pd.DataFrame(list_of_rows, columns=["link","name", "organization", "date", "location","killed","type_of_death", ""]).dropna().drop_duplicates()
 
 data.to_csv("data.csv",index=False)
